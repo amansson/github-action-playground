@@ -8,7 +8,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "This is a line of text.\nAnd this is another one."
+              "text": "Pull Request form Github",
+              "attachments": [
+                {
+                  "title": "${{ job.status }}: ${{ github.workflow }}",
+                  "title_link": "https://github.com/${{ github.repository }}/commit/${{ github.sha }}/checks"
+                }
+              ]
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
