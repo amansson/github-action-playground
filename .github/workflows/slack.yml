@@ -14,8 +14,8 @@ jobs:
                   "title": "${{ job.status }}: ${{ github.workflow }}",
                   "text": "${{ github.event.pull_request.title }},
                   "text_link": "${{ github.event.pull_request.url }}",
-                  "footer": "${{ github.event.pull_request.user.login }} at ${{ github.event.pull_request.created_at }}",
-                  "color": "danger"
+                  "footer": "${{ github.event.pull_request.user.login }}",
+                  "color": "warning"
                 }
               ]
             }
