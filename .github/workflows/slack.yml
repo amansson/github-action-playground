@@ -11,7 +11,7 @@ jobs:
               "text": "Pull Request form Github",
               "attachments": [
                 {
-                  "title": "${{ github.event.pull_request.title }},
+                  "title": "${{ github.event.pull_request.title }}",
                   "title_link": "${{ github.event.pull_request.url }}",
                   "text": "${{ github.event.pull_request.body }}",
                   "footer": "${{ github.event.pull_request.user.login }} at ${{ github.event.pull_request.created_at }}",
