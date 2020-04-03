@@ -12,9 +12,9 @@ jobs:
               "attachments": [
                 {
                   "title": "${{ github.event.pull_request.title }}",
-                  "title_link": "${{ github.event.pull_request.url }}",
+                  "title_link": "${{ github.event.pull_request.html_url }}",
                   "text": "${{ github.event.pull_request.body }}",
-                  "footer": "${{ github.event.pull_request.user.login }} at ${{ github.event.pull_request.created_at }}",
+                  "footer": "user: ${{ github.event.pull_request.user.login }} at created at: ${{ github.event.pull_request.created_at }}",
                   "color": "warning"
                 }
               ]
