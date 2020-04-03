@@ -1,22 +1,18 @@
-const core = require('@actions/core');
-const wait = require('./wait');
+import * as core from '@actions/core';
+import { IncomingWebhook } from '@slack/webhook';
 
-
-// most @actions toolkit packages have async methods
 async function run() {
-  try { 
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
+  try {
+    if (process.env.SLACK_WEBHOOK_URL === undefined) {
+      throw new Error('SLACK_WEBHOOK_URL is not set');
+    }
+    const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
+    var payload = eval("payload = " + core.getInput('payload'));
 
-    core.debug((new Date()).toTimeString())
-    await wait(parseInt(ms));
-    core.debug((new Date()).toTimeString())
-
-    core.setOutput('time', new Date().toTimeString());
-  } 
-  catch (error) {
+    await webhook.send(JSON.parse(JSON.stringify(payload)));
+  } catch (error) {
     core.setFailed(error.message);
   }
 }
 
-run()
+run();

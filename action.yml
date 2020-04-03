@@ -1,10 +1,9 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'slack-notification-action'
+description: 'Github action to send notifications to slack'
+author: amansson
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
+  payload:
+    description: payload incoming slack webhook
 outputs:
   time: # output will be available to future steps 
     description: 'The message to output'
