@@ -1,10 +1,10 @@
 name: "slack notification"
-on: [pull_request]
+on: pull_request
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: k0kubun/action-slack@v1.0.0
+      - uses: amansson/slack-notification-action@master
         with:
           payload: |
             {
