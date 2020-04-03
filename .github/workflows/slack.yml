@@ -12,10 +12,10 @@ jobs:
               "attachments": [
                 {
                   "title": "${{ job.status }}: ${{ github.workflow }}",
-                  "title_link": "https://github.com/${{ github.repository }}/commit/${{ github.sha }}/checks",
-                  "text": "${{ github.event.pull_request.title }}@${{ github.ref }}: <https://github.com/${{ github.repository }}/commit/${{ github.sha }}|${{ github.sha }}>",
-                  "footer": "${{ github.event.head_commit.committer.name }} at ${{ github.event.head_commit.timestamp }}",
-                  "color": "danger"
+                  "text": "${{ github.event.pull_request.title }},
+                  "text_link": "${{ github.event.pull_request.url }}",
+                  "footer": "${{ github.event.pull_request.user.login }} at ${{ github.event.pull_request.created_at }}",
+                  "color": "warning"
                 }
               ]
             }
