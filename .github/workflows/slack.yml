@@ -12,7 +12,9 @@ jobs:
               "attachments": [
                 {
                   "title": "${{ job.status }}: ${{ github.workflow }}",
-                  "title_link": "https://github.com/${{ github.repository }}/commit/${{ github.sha }}/checks"
+                  "title_link": "https://github.com/${{ github.repository }}/commit/${{ github.sha }}/checks",
+                  "footer": "${{ github.event.head_commit.committer.name }} at ${{ github.event.head_commit.timestamp }}",
+                  "color": "danger"
                 }
               ]
             }
