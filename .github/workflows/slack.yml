@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: amansson/slack-notification-action@master
         with:
-          payload:
+          payload: |
             {
               "blocks": [
                 {
