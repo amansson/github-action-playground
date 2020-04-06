@@ -7,17 +7,66 @@ jobs:
       - uses: amansson/slack-notification-action@master
         with:
           payload: |
+          [
             {
-              "text": "Pull Request form Github",
-              "attachments": [
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "Pull Request Title"
+              }
+            },
+            {
+              "type": "section",
+              "fields": [
                 {
-                  "title": "${{ github.event.pull_request.title }}",
-                  "title_link": "${{ github.event.pull_request.html_url }}",
-                  "text": "${{ github.event.pull_request.body }}",
-                  "footer": "user: ${{ github.event.pull_request.user.login }} at created at: ${{ github.event.pull_request.created_at }}",
-                  "color": "warning"
+                  "type": "mrkdwn",
+                  "text": "*Type:*\nPULL REQUEST"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*When:*\nSubmitted Aut 10"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Description:*\nAll vowel keys aren't working."
                 }
               ]
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Reviewers:*\nAndreas Månsson\nAndreas Voight"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "<https://google.com|Link to pull request>"
+              }
+            },
+            {
+              "type": "context",
+              "elements": [
+                {
+                  "type": "mrkdwn",
+                  "text": "Last updated: Jan 1, 2019"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "This is a mrkdwn section block :ghost: *this is bold*, and ~this is crossed out~, and <https://google.com|this is a link>"
+              }
             }
+          ]
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
