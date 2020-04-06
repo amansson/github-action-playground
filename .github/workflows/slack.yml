@@ -46,7 +46,7 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers }}Andreas Månsson\nAndreas Voight"
+                      "text": "*Reviewers:*\nAndreas Månsson\nAndreas Voight"
                     }
                   ]
                 },
