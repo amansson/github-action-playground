@@ -25,7 +25,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*When:*\n${{ github.event.pull_request.created_at.toUTCString() }}"
+                      "text": "*When:*\n${{ github.event.pull_request.created_at }}"
                     },
                     {
                       "type": "mrkdwn",
