@@ -6,55 +6,56 @@ jobs:
     steps:
       - uses: amansson/slack-notification-action@master
         with:
-          payload:| {
+          payload: |
+          {
             "blocks": [
-                {
-                    "type": "section",
-                    "text": {
-                        "type": "mrkdwn",
-                        "text":"${{ github.event.pull_request.title }}"
-                    }
-                },
-                {
-                    "type": "section",
-                    "fields": [
-                        {
-                            "type": "mrkdwn",
-                            "text": "*Type:*\nPULL REQUEST"
-                        },
-                        {
-                            "type": "mrkdwn",
-                            "text":"*When:*\n${{ github.event.pull_request.created_at }}"
-                        }
-                    ]
-                },
-                {
-                    "type": "section",
-                    "text":
-                    {
-                        "type": "mrkdwn",
-                        "text":"*Description:*\n${{ github.event.pull_request.body }}"
-                    }
-                },
-                {
-                    "type": "divider"
-                },
-                {
-                    "type": "section",
-                    "text":
-                    {
-                        "type": "mrkdwn",
-                        "text":"*Reviewers:*\n${{ github.event.pull_request.requested_reviewers }}Andreas Månsson\nMr Voigt"
-                    }
-                },
-                {
-                    "type": "section",
-                    "text": {
-                        "type": "mrkdwn",
-                        "text":"<${{ github.event.pull_request.html_url }}|Link to pull request>"
-                    }
-                }
+              {
+                  "type": "section",
+                  "text": {
+                      "type": "mrkdwn",
+                      "text":"${{ github.event.pull_request.title }}"
+                  }
+              },
+              {
+                  "type": "section",
+                  "fields": [
+                      {
+                          "type": "mrkdwn",
+                          "text": "*Type:*\nPULL REQUEST"
+                      },
+                      {
+                          "type": "mrkdwn",
+                          "text":"*When:*\n${{ github.event.pull_request.created_at }}"
+                      }
+                  ]
+              },
+              {
+                  "type": "section",
+                  "text":
+                  {
+                      "type": "mrkdwn",
+                      "text":"*Description:*\n${{ github.event.pull_request.body }}"
+                  }
+              },
+              {
+                  "type": "divider"
+              },
+              {
+                  "type": "section",
+                  "text":
+                  {
+                      "type": "mrkdwn",
+                      "text":"*Reviewers:*\n${{ github.event.pull_request.requested_reviewers }}Andreas Månsson\nMr Voigt"
+                  }
+              },
+              {
+                  "type": "section",
+                  "text": {
+                      "type": "mrkdwn",
+                      "text":"<${{ github.event.pull_request.html_url }}|Link to pull request>"
+                  }
+              }
             ]
-        }
+          }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
