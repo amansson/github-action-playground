@@ -8,24 +8,27 @@ jobs:
         with:
           payload: |
           {
-            "blocks": [
+            "blocks": 
+            [
               {
                 "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": "${{ github.event.pull_request.title }}"
+                "text": 
+                {
+                  "type": "mrkdwn",
+                  "text": "${{ github.event.pull_request.title }}"
                 }
               },
               {
                 "type": "section",
-                "text": [
+                "text": 
+                [
                   {
-                      "type": "mrkdwn",
-                      "text": "*Type:*\nPULL REQUEST"
+                    "type": "mrkdwn",
+                    "text": "*Type:*\nPULL REQUEST"
                   },
                   {
-                      "type": "mrkdwn",
-                      "text": "*When:*\n${{ github.event.pull_request.created_at }}"
+                    "type": "mrkdwn",
+                    "text": "*When:*\n${{ github.event.pull_request.created_at }}"
                   }
                 ]
               },
@@ -33,8 +36,8 @@ jobs:
                 "type": "section",
                 "text":
                 {
-                    "type": "mrkdwn",
-                    "text": "*Description:*\n${{ github.event.pull_request.body }}"
+                  "type": "mrkdwn",
+                  "text": "*Description:*\n${{ github.event.pull_request.body }}"
                 }
               },
               {
@@ -50,9 +53,10 @@ jobs:
               },
               {
                 "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": "<${{ github.event.pull_request.html_url }}|Link to pull request>"
+                "text": 
+                {
+                  "type": "mrkdwn",
+                  "text": "<${{ github.event.pull_request.html_url }}|Link to pull request>"
                 }
               }
             ]
