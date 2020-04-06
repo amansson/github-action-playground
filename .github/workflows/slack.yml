@@ -6,67 +6,69 @@ jobs:
     steps:
       - uses: amansson/slack-notification-action@master
         with:
-          payload: |
-          [
+          payload:
             {
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "Pull Request Title"
-              }
-            },
-            {
-              "type": "section",
-              "fields": [
+              "blocks": [
                 {
-                  "type": "mrkdwn",
-                  "text": "*Type:*\nPULL REQUEST"
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Pull Request Title"
+                  }
                 },
                 {
-                  "type": "mrkdwn",
-                  "text": "*When:*\nSubmitted Aut 10"
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Type:*\nPULL REQUEST"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*When:*\nSubmitted Aut 10"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Description:*\nAll vowel keys aren't working."
+                    }
+                  ]
                 },
                 {
-                  "type": "mrkdwn",
-                  "text": "*Description:*\nAll vowel keys aren't working."
-                }
-              ]
-            },
-            {
-              "type": "divider"
-            },
-            {
-              "type": "section",
-              "fields": [
+                  "type": "divider"
+                },
                 {
-                  "type": "mrkdwn",
-                  "text": "*Reviewers:*\nAndreas Månsson\nAndreas Voight"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "<https://google.com|Link to pull request>"
-              }
-            },
-            {
-              "type": "context",
-              "elements": [
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Reviewers:*\nAndreas Månsson\nAndreas Voight"
+                    }
+                  ]
+                },
                 {
-                  "type": "mrkdwn",
-                  "text": "Last updated: Jan 1, 2019"
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://google.com|Link to pull request>"
+                  }
+                },
+                {
+                  "type": "context",
+                  "elements": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "Last updated: Jan 1, 2019"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "This is a mrkdwn section block :ghost: *this is bold*, and ~this is crossed out~, and <https://google.com|this is a link>"
+                  }
                 }
               ]
-            },
-            {
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "This is a mrkdwn section block :ghost: *this is bold*, and ~this is crossed out~, and <https://google.com|this is a link>"
-              }
             }
-          ]
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
