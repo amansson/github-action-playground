@@ -31,12 +31,11 @@ jobs:
                 },
                 {
                   "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Description:*\n${{ github.event.pull_request.body }}"
-                    }
-                  ]
+                  "fields":
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Description:*\n${{ github.event.pull_request.body }}"
+                  }
                 },
                 {
                   "type": "divider"
@@ -46,7 +45,7 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Reviewers:*\nAndreas Månsson\nAndreas Voight"
+                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers }}Andreas Månsson\nAndreas Voight"
                     }
                   ]
                 },
