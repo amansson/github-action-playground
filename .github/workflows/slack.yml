@@ -6,14 +6,14 @@ jobs:
     steps:
       - uses: amansson/slack-notification-action@master
         with:
-          payload:
+          payload: |
             {
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Pull Request Title"
+                    "text": "${{ github.event.pull_request.title }}"
                   }
                 },
                 {
@@ -25,11 +25,11 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*When:*\nSubmitted Aut 10"
+                      "text": "*When:*\n${{ github.event.pull_request.created_at.toUTCString() }}"
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Description:*\nAll vowel keys aren't working."
+                      "text": "*Description:*\n${{ github.event.pull_request.body }}"
                     }
                   ]
                 },
@@ -41,7 +41,7 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Reviewers:*\nAndreas Månsson\nAndreas Voight"
+                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers.map( reviewer => { return reviewer.login }) }}Andreas Månsson\nAndreas Voight"
                     }
                   ]
                 },
@@ -49,23 +49,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "<https://google.com|Link to pull request>"
-                  }
-                },
-                {
-                  "type": "context",
-                  "elements": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "Last updated: Jan 1, 2019"
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "This is a mrkdwn section block :ghost: *this is bold*, and ~this is crossed out~, and <https://google.com|this is a link>"
+                    "text": "<${{ github.event.pull_request.html_url }}|Link to pull request>"
                   }
                 }
               ]
