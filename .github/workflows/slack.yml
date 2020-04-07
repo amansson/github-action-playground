@@ -33,7 +33,7 @@ jobs:
                   "type": "section",
                   "text":
                   {
-                    "type": "plain_text",
+                    "type": "mrkdwn",
                     "text": "*Description:*\n${{ github.event.pull_request.body }}"
                   }
                 },
