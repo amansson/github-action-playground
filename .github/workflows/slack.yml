@@ -20,7 +20,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Repo: ${{ github.event.pull_request.repo.full_name }}"
+                    "text": "Repo: ${{ github.event.pull_request.head.repo.full_name }}"
                   }
                 },
                 {
