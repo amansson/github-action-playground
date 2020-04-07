@@ -45,7 +45,7 @@ jobs:
                   "text":
                   {
                     "type": "mrkdwn",
-                    "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers.map((rev) => { return rev.login }) }}"
+                    "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers.map(rev => { return rev.login }) }}"
                   }
                 },
                 {
