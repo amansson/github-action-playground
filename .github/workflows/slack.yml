@@ -20,7 +20,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":fox:Repo: ${{ github.event.pull_request.head.repo.full_name }}"
+                    "text": ":fox_face:Repo: ${{ github.event.pull_request.head.repo.full_name }}"
                   }
                 },
                 {
