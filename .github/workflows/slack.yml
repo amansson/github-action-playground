@@ -18,6 +18,13 @@ jobs:
                 },
                 {
                   "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Repo: ${{ github.event.pull_request.repo.full_name }}"
+                  }
+                },
+                {
+                  "type": "section",
                   "fields": [
                     {
                       "type": "mrkdwn",
@@ -45,7 +52,7 @@ jobs:
                   "text":
                   {
                     "type": "mrkdwn",
-                    "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers.map(rev => { return rev.login }) }}"
+                    "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers.login[0] }}"
                   }
                 },
                 {
