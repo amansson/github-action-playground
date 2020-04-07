@@ -52,7 +52,7 @@ jobs:
                   "text":
                   {
                     "type": "mrkdwn",
-                    "text": "*Reviewers:*\n${{ funtion() { return github.event.pull_request.requested_reviewers[0].login } }}"
+                    "text": "*Reviewers:*\n${{ function { return github.event.pull_request.requested_reviewers[0].login } }}"
                   }
                 },
                 {
