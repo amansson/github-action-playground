@@ -32,7 +32,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*When:*\n${{ github.event.pull_request.created_at }}"
+                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers[0].login }}"
                     }
                   ]
                 },
@@ -46,14 +46,6 @@ jobs:
                 },
                 {
                   "type": "divider"
-                },
-                {
-                  "type": "section",
-                  "text":
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers[0].login }}"
-                  }
                 },
                 {
                   "type": "section",
