@@ -32,7 +32,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers.forEach(function (item) { item.login } ) }}"
+                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers[0].login }}, ${{ github.event.pull_request.requested_reviewers[1].login }}, ${{ github.event.pull_request.requested_reviewers[2].login }}, ${{ github.event.pull_request.requested_reviewers[3].login }}"
                     }
                   ]
                 },
