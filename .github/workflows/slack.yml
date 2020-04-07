@@ -41,7 +41,7 @@ jobs:
                   "text":
                   {
                     "type": "mrkdwn",
-                    "text": "*Description:*\n${{ toJson(github.event.pull_request.body) }}"
+                    "text": "${{ github.event.pull_request.body }}"
                   }
                 },
                 {
