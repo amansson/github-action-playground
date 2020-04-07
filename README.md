@@ -21,6 +21,7 @@ Install the dependencies
 ```bash
 $ npm install
 ```
+fix somewthing
 
 Run the tests :heavy_check_mark:  
 ```bash
