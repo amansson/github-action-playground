@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: amansson/slack-notification-action@master
+      - uses: amansson/slack-notification-action@v1
         with:
           payload: |
             {
