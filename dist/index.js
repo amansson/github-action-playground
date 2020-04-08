@@ -472,7 +472,7 @@ async function slack() {
       throw new Error('SLACK_WEBHOOK_URL not set as a secret in github');
     }
     const webhook = new _slack_webhook__WEBPACK_IMPORTED_MODULE_1__.IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
-    const payload = eval("payload = " + _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('payload'));
+    let payload = eval("payload = " + _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('payload'));
 
     await webhook.send(JSON.parse(JSON.stringify(payload)));
   } catch (error) {
