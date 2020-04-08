@@ -20,7 +20,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":fox_face: Repo: ${{ github.event.pull_request.head.repo.full_name }}"
+                    "text": ":registered: ${{ github.event.pull_request.head.repo.full_name }}"
                   }
                 },
                 {
@@ -28,11 +28,11 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Type:*\nPULL REQUEST"
+                      "text": "*Type:*\nPull Request"
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers.forEach(function(obj) { console.log(obj.login); }) }}"
+                      "text": "*Reviewers:*\n${{ github.event.pull_request.requested_reviewers[0].login }} ${{ github.event.pull_request.requested_reviewers[1].login }} ${{ github.event.pull_request.requested_reviewers[2].login }} ${{ github.event.pull_request.requested_reviewers[3].login }}"
                     }
                   ]
                 },
