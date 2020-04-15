@@ -32,7 +32,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Reviewers:*\n${{ join(github.event.pull_request.*.login, '\n') }}"
+                      "text": "*Reviewers:*\n${{ join(github.event.pull_request.reviewers.*.login, '\n') }}"
                     }
                   ]
                 },
