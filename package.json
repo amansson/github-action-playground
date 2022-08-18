@@ -21,7 +21,7 @@
     "url": "https://github.com/amansson/slack-notification-action/issues"
   },
   "dependencies": {
-    "@actions/core": "^1.1.1",
+    "@actions/core": "^1.9.1",
     "@slack/webhook": "^5.0.3"
   },
   "devDependencies": {
